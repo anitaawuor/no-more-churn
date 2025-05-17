@@ -26,5 +26,5 @@ This project analyzes customer churn behavior for a fictional telecom company. U
 ### 3. Exploratory Data Analysis (SQL Queries)
 Ran multiple SQL queries to uncover trends and patterns:
 - Churn Rate: ~27% of customers had churned.
-- Higher monthly charges are associated with higher churn.
-- Short-Term Contracts Drive Churn: Customers on month-to-month contracts churn significantly more than those on annual or two-year plans.
+- Contract Type: Monthly contracts had the highest churn rate (over 40%).
+- Support Services: Customers without tech support or online backup had higher churn rates.
