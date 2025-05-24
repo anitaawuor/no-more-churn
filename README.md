@@ -14,23 +14,122 @@ This project analyzed customer churn behavior for a fictional telecom company. U
 ## 🔄 Project Workflow 
 ### 1. Data Cleaning (Google Sheets)
 - Removed rows with empty `TotalCharges` (less than 1% of data).
-- Converted `SeniorCitizen` from binary (`0/1`) to categorical (`"No"/"Yes"`) for readability.
+- Converted `SeniorCitizen` from binary (`0/1`) to categorical (`No/Yes`) for readability.
 - Standardized column names by trimming extra spaces and ensuring consistent formatting.
 - Exported the cleaned dataset as `telco_customer_churn.csv`
 
 ### 2. Database Setup (MySQL)
-- Created a new schema: `telco_customer_churn` and a table named `customer_churn_analysis`.
-- Defined appropriate data types for each column.
-- Used MySQL’s table data import wizard to load the cleaned CSV file.
+- Created a new schema `telco_customer_churn` and a table named `customer_churn_analysis`.
+- Defined appropriate data types for each column (e.g., `DECIMAL` for charges, `VARCHAR` for categories).
+- Used MySQL’s import wizard to load the cleaned CSV file.
 
 ### 3. Exploratory Data Analysis (SQL Queries)
 Ran multiple SQL queries to uncover trends and patterns:
-- Churn Rate: 26.6% of total customers had churned.
-- Contract Type: Monthly contracts had the highest churn rate (over 40%).
-- Support Services: Customers without tech support, online backup, or device protection had higher churn rates.
-- Senior Citizens: Despite being a smaller group (only ~16% of customers), seniors churned at nearly twice the rate of non-seniors (41.7%).
-- Tenure Impact: New customers (tenure < 12 months) churned at the highest rate (47.7%).
-- Internet Service Type: Fiber optic customers churned the most, with a 41.9% churn rate.
-- Payment Method: Electronic check users churned the most, by far, with a 45.3% churn rate.
-- Gender: Gender had little to no impact on churn, as females churned at a rate of 26.96% and males at 26.20%, a statistically negligible difference of less than 1%.
-- High-value churners: A total of 350 high-value customers who had paid over $3,000 each in total charges churned — a significant revenue loss, as these long-term or premium users still chose to end their service.
+
+-- 1. Total Customers and Churn Rate --
+SELECT 
+    COUNT(*) AS total_customers,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned_customers,
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
+FROM customer_churn_analysis;
+
+-- 2. Churn by Contract Type --
+SELECT 
+    Contract,
+    COUNT(*) AS total,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
+FROM customer_churn_analysis
+GROUP BY Contract;
+
+-- 3. Services that Correlate with Churn --
+SELECT 
+    TechSupport,
+    COUNT(*) AS total,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
+FROM customer_churn_analysis
+GROUP BY TechSupport;
+
+SELECT 
+    OnlineBackup,
+    COUNT(*) AS total,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
+FROM customer_churn_analysis
+GROUP BY OnlineBackup;
+
+SELECT 
+    DeviceProtection,
+    COUNT(*) AS total,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
+FROM customer_churn_analysis
+GROUP BY DeviceProtection;
+
+-- 4. Churn by Senior Citizen --
+SELECT 
+    SeniorCitizen,
+    COUNT(*) AS total,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
+FROM customer_churn_analysis
+GROUP BY SeniorCitizen;
+
+-- 5. Churn by Tenure Group --
+SELECT 
+    CASE 
+        WHEN tenure BETWEEN 0 AND 12 THEN '0-12 months'
+        WHEN tenure BETWEEN 13 AND 24 THEN '13-24 months'
+        WHEN tenure BETWEEN 25 AND 48 THEN '25-48 months'
+        ELSE '49+ months'
+    END AS tenure_group,
+    COUNT(*) AS total,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
+FROM customer_churn_analysis
+GROUP BY tenure_group;
+
+-- 6. Internet Service Type and Churn --
+SELECT 
+    InternetService,
+    COUNT(*) AS total,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
+FROM customer_churn_analysis
+GROUP BY InternetService;
+
+-- 7. Churn by Payment Method --
+SELECT 
+    PaymentMethod,
+    COUNT(*) AS total,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
+FROM customer_churn_analysis
+GROUP BY PaymentMethod;
+
+-- 8. Churn Rate by Gender --
+SELECT 
+    gender,
+    COUNT(*) AS total,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
+FROM customer_churn_analysis
+GROUP BY gender;
+
+-- 9. High-Value Churners (TotalCharges > 3000) --
+SELECT 
+    COUNT(*) AS high_value_churners
+FROM customer_churn_analysis
+WHERE Churn = 'Yes' AND TotalCharges > 3000;
+
+## 📌 Key Insights
+- **Churn Rate:** 26.6% of total customers had churned.
+- **Contract Type:** Monthly contracts had the highest churn rate (over 40%).
+- **Support Services:** Customers without tech support, online backup, or device protection had higher churn rates.
+- **Senior Citizens:** Despite being a smaller group (only ~16% of customers), seniors churned at nearly twice the rate of non-seniors (41.7%).
+- **Tenure Impact:** New customers (tenure < 12 months) churned at the highest rate (47.7%).
+- **Internet Service Type:** Fiber optic customers churned the most, with a 41.9% churn rate.
+- **Payment Method:** Electronic check users churned the most, by far, with a 45.3% churn rate.
+- **Gender:** Gender had little to no impact on churn, as females churned at a rate of 26.96% and males at 26.20%, a statistically negligible difference of less than 1%.
+- **High-value churners:** A total of 350 high-value customers who had paid over $3,000 each in total charges churned — a significant revenue loss, as these long-term or premium users still chose to end their service.
