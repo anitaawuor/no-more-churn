@@ -122,7 +122,8 @@ GROUP BY gender;
 SELECT 
     COUNT(*) AS high_value_churners
 FROM customer_churn_analysis
-WHERE Churn = 'Yes' AND TotalCharges > 3000;```
+WHERE Churn = 'Yes' AND TotalCharges > 3000;
+```
 
 ## 📌 Key Insights
 - **Churn Rate:** 26.6% of total customers had churned.
