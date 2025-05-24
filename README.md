@@ -141,7 +141,7 @@ WHERE Churn = 'Yes' AND TotalCharges > 3000;
 **Implication:** 
 A churn rate this high reflects a critical retention problem. Losing over a quarter of customers impacts recurring revenue, raises acquisition costs, and may point to service or support dissatisfaction.
 
-### 2. Contract Type — Monthly Plans Churned Most (40%+)
+### 2. Contract Type — Monthly contracts showed a churn rate above 40%
 **Implication:** 
 Month-to-month customers are more likely to leave due to a lack of commitment.
 
