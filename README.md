@@ -25,6 +25,12 @@ This project analyzes customer churn behavior for a fictional telecom company. U
 
 ### 3. Exploratory Data Analysis (SQL Queries)
 Ran multiple SQL queries to uncover trends and patterns:
-- Churn Rate: ~27% of customers had churned.
+- Churn Rate: 26.6% of total customers had churned.
 - Contract Type: Monthly contracts had the highest churn rate (over 40%).
-- Support Services: Customers without tech support or online backup had higher churn rates.
+- Support Services: Customers without tech support, online backup, or device protection had higher churn rates.
+- Senior Citizens: Despite being a smaller group (only ~16% of customers), seniors churned at nearly twice the rate of non-seniors (41.7%).
+- Tenure Impact: New customers (tenure < 12 months) churned at the highest rate (47.7%).
+- Internet Service Type: Fiber optic customers churned the most, with a 41.9% churn rate.
+- Payment Method: Electronic check users churned the most, by far, with a 45.3% churn rate.
+- Gender: Gender had little to no impact on churn, as females churned at a rate of 26.96% and males at 26.20%, a statistically negligible difference of less than 1%.
+- High-value churners: A total of 350 high-value customers who had paid over $3,000 each in total charges churned — a significant revenue loss, as these long-term or premium users still chose to end their service.
