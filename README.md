@@ -191,7 +191,7 @@ Churn was nearly identical across genders.
 **Recommendation:**
 Focus retention efforts on higher-impact segments (contract, payment, tenure).
 
-### 9. High-Value Churners — 350 Paid $3,000+ Before Leaving
+### 9. High-Value Churners — 350 Customers Paid $3,000+ Before Leaving
 **Implication:**
 Losing high-revenue customers is a major business risk.
 
