@@ -137,74 +137,47 @@ WHERE Churn = 'Yes' AND TotalCharges > 3000;
 - **High-value churners:** A total of 350 high-value customers who had paid over $3,000 each in total charges churned — a significant revenue loss, as these long-term or premium users still chose to end their service.
 
 ## ✅ Targeted Churn Drivers: Identifying Who Leaves, Why, and What It Costs
-### 1. Overall Churn Rate — 26.6%
-**Why it matters:** 
-A churn rate this high reflects a critical retention problem. Losing over a quarter of customers impacts recurring revenue, raises acquisition costs, and may point to service or support dissatisfaction.
+### 1. Electronic Check Customers Churn at 45.3%
+**Why it matters:** Electronic check users are the highest-risk segment, with nearly half of them leaving. This may be due to demographics or payment issues.
 
-### 2. Contract Type — Monthly contracts showed a churn rate above 40%
-**Implication:** 
-Month-to-month customers are more likely to leave due to a lack of commitment.
+**Action:** Offer these customers incentives to switch to auto-pay with cards or bank transfer to improve retention.
 
-**Actionable strategies:** 
-- Incentivize longer-term contracts (6–12 months)
-- Offer loyalty perks or renewal discounts
+### 2. Monthly Contract Churn Rate Over 40%
+**Why it matters:** Monthly plans = flexibility to leave. They're convenient but make churn easier.
 
- ### 3. Support Services — Missing Support Linked to Higher Churn
-**Implication:**
-Lack of tech support, online backup, or device protection correlates with higher churn.
+**Actions:**
+- Push 6–12 month plans with discounts or bundles.
+- Target with email campaigns or loyalty perks.
 
-**Recommendation:**
-Bundle essential support services or offer free trials to improve retention.
-
-### 4. Senior Citizens — 41.7% Churn Rate
-**Implication:**
-Though only ~16% of the base, seniors churned at nearly double the rate of non-seniors.
-
-**Recommendation:**
-Introduce senior-friendly plans, simplified billing, and tailored support.
-
-### 5. Tenure Impact — New Users (Under 12 Months) Churned Most (47.7%)
-**Implication:**
-Nearly half of new users leave within a year, likely due to poor onboarding or unmet expectations.
-
-**Recommendation:**
-Strengthen welcome flows, early engagement, and post-signup support.
-
-### 6. Internet Service Type — Fiber Optic Churn Rate: 41.9%
-**Implication:**
-Fiber users may expect premium quality but churn if dissatisfied.
-
-**Recommendation:**
-Audit service quality, support responsiveness, and gather feedback post-installation.
-
-### 7. Electronic Check Customers Churn at 45.3%
-**Why it matters:**
-Electronic check users are the highest-risk segment, with nearly half of them leaving. This may be due to demographics or payment issues.
+### 3. Seniors (41.7%) Churn Almost Double Non-Seniors
+**Why it matters:** Although only 16% of customers, they are churning at 2× the rate, representing a big hidden loss.
 
 **Action:**
-Offer these customers incentives to switch to auto-pay with cards or bank transfer to improve retention.
+- Create senior-focused plans with simplified support and billing.
+- Offer call center callbacks or live agent perks.
+  
+### 4. New Customers (Under 12 Months) Churn at 47.7%
+**Why it matters:** Nearly half of new users are leaving within a year, likely due to poor onboarding or unmet expectations.
 
-**Visual:**
-- Bar Chart → PaymentMethod on axis, Churn Rate by Payment Method on values
-- DAX:
-```dax
-Churn Rate by Payment Method = 
-DIVIDE(
-    CALCULATE(COUNTROWS('Telco'), 'Telco'[Churn] = "Yes"),
-    COUNTROWS('Telco')
-)
-```
+**Action:** Introduce stronger onboarding, welcome emails, and post-signup support.
 
-### 8. Gender — No Significant Impact
-**Implication:**
-Churn was nearly identical across genders.
+### 5. Fiber Optic Users Churn at 41.9%
+**Why it matters:** Fiber should be a premium service, yet churn is alarmingly high. This may be due to dissatisfaction.
 
-**Recommendation:**
-Focus retention efforts on higher-impact segments (contract, payment, tenure).
+**Actions:**
+- Investigate installation issues, speed complaints, or billing confusion.
+- Gather user feedback at install + 30-day check-in.
 
-### 9. High-Value Churners — 350 Customers Paid $3,000+ Before Leaving
-**Implication:**
-Losing high-revenue customers is a major business risk.
+### 6. 350 High-Value Customers Churned (>$3,000 in Charges)
+**Why it matters:** These are the most loyal or premium customers — losing them means major revenue leaks.
 
-**Recommendation:**
-Develop a VIP retention strategy — proactive support, perks, and satisfaction outreach.
+**Actions:**
+- Launch a VIP loyalty/retention program.
+- Proactive outreach, concierge support, or retention perks.
+
+### 7. Support Services = Lower Churn
+**Why it matters:** Customers without Online Backup, Tech Support, or Device Protection churn more.
+
+**Actions:**
+- Bundle these services into packages.
+- Offer free trials or demos for new users.
