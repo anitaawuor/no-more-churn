@@ -139,40 +139,47 @@ WHERE Churn = 'Yes' AND TotalCharges > 3000;
 ## ✅ Targeted Churn Drivers: Identified Who Left, Why, and What It Cost
 ### 1. Electronic Check Customers Churned at 45.3%
 **Why it mattered:** Electronic check users were the highest-risk segment, with nearly half of them leaving, likely due to demographic or payment-related challenges.
+
 **Recommended Action:** Offer incentives to switch to auto-pay via credit card or bank transfer.
 
 ### 2. Monthly Contract Customers Had a Churn Rate Over 40%
 **Why it mattered:** Month-to-month contracts provided flexibility, making it easier for customers to leave at any time.
+
 **Recommended Actions:**
 - Promote 6–12 month contracts through discounts or bundled offers.
 - Target this group with loyalty campaigns or exclusive perks.
 
 ### 3. Senior Citizens Churned at Nearly Double the Rate (41.7%)
 **Why it mattered:** Though seniors made up only 16% of the base, they churned at twice the rate of non-seniors, representing a significant hidden loss.
+
 **Recommended Actions:**
 - Introduce simplified, senior-focused plans.
 - Offer personalized support, including live agents or callbacks.
   
 ### 4. New Customers (Tenure < 12 Months) Churned at 47.7%
 **Why it mattered:** Nearly half of new users left within their first year, suggesting poor onboarding or unmet expectations.
+
 **Recommended Actions:**
 - Strengthen the onboarding experience.
 - Use welcome emails, proactive check-ins, and early support interventions.
   
 ### 5. Fiber Optic Users Churned at 41.9%
 **Why it mattered:** Fiber, typically viewed as a premium offering, had one of the highest churn rates, potentially due to performance or service delivery issues.
+
 **Recommended Actions:**
 - Audit installation and network quality.
 - Collect feedback within 30 days of installation.
 
 ### 6. 350 High-Value Customers (>$3,000 in Charges) Churned
 **Why it mattered:** Losing long-term or premium customers posed a serious revenue risk, despite their high lifetime value.
+
 **Recommended Actions:**
 - Launch a VIP retention strategy with tailored perks.
 - Use proactive outreach and concierge-style support.
 
 ### 7. Missing Support Services Were Linked to Higher Churn
 **Why it mattered:** Customers lacking Online Backup, Tech Support, or Device Protection churned at noticeably higher rates.
+
 **Recommended Actions:**
 - Bundle essential support services into plans.
 - Offer free trials or demos to increase adoption.
