@@ -1,6 +1,6 @@
 # Telco Customer Churn Analysis
 ## 📊 Project Overview
-This project analyzes customer churn behavior for a fictional telecom company. Using SQL and Power BI, I uncover key factors that contribute to churn and identify actionable insights to improve customer retention.
+This project analyzed customer churn behavior for a fictional telecom company. Using SQL and Power BI, I uncovered key factors that contributed to churn and identified actionable insights to improve customer retention.
 
 ## 📁 Dataset
 - **Source:** [Kaggle - Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
@@ -8,13 +8,13 @@ This project analyzes customer churn behavior for a fictional telecom company. U
 
 ## 🧰 Tools Used
 - **Google Sheets** – Data cleaning and preprocessing
-- **MySQL** – Relational database and SQL analysis
-- **Power BI** – Interactive visualizations and dashboards
+- **MySQL** – Data storage and analysis using SQL
+- **Power BI** – Interactive dashboards and visual storytelling
 
-## 🔄 Workflow Summary
+## 🔄 Project Workflow 
 ### 1. Data Cleaning (Google Sheets)
 - Removed rows with empty `TotalCharges` (less than 1% of data).
-- Converted `SeniorCitizen` from `0/1` to `"No"/"Yes"` for readability.
+- Converted `SeniorCitizen` from binary (0/1) to categorical (`"No"/"Yes"`) for readability.
 - Standardized column names by trimming extra spaces and ensuring consistent formatting.
 - Exported the cleaned dataset as `telco_customer_churn.csv`
 
