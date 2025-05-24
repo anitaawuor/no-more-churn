@@ -140,7 +140,7 @@ WHERE Churn = 'Yes' AND TotalCharges > 3000;
 ### 1. Electronic Check Customers Churn at 45.3%
 **Why it matters:** Electronic check users are the highest-risk segment, with nearly half of them leaving. This may be due to demographics or payment issues.
 
-**Action:** Offer these customers incentives to switch to auto-pay with cards or bank transfer to improve retention.
+**Action:** Offer these customers incentives to switch to auto-pay with credit cards or bank transfer to improve retention.
 
 ### 2. Monthly Contract Churn Rate Over 40%
 **Why it matters:** Monthly plans = flexibility to leave. They're convenient but make churn easier.
