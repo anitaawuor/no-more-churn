@@ -14,7 +14,7 @@ This project analyzed customer churn behavior for a fictional telecom company. U
 ## 🔄 Project Workflow 
 ### 1. Data Cleaning (Google Sheets)
 - Removed rows with empty `TotalCharges` (less than 1% of data).
-- Converted `SeniorCitizen` from binary (0/1) to categorical (`"No"/"Yes"`) for readability.
+- Converted `SeniorCitizen` from binary (`0/1`) to categorical (`"No"/"Yes"`) for readability.
 - Standardized column names by trimming extra spaces and ensuring consistent formatting.
 - Exported the cleaned dataset as `telco_customer_churn.csv`
 
