@@ -26,16 +26,15 @@ This project analyzed customer churn behavior for a fictional telecom company. U
 ### 3. Exploratory Data Analysis (SQL Queries)
 Ran multiple SQL queries to uncover trends and patterns:
 
-#### 1. Total Customers and Churn Rate
-
 ```sql
+-- 1. Total Customers and Churn Rate
 SELECT 
     COUNT(*) AS total_customers,
     SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned_customers,
     ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
 FROM customer_churn_analysis;
 
-### 2. Churn by Contract Type
+-- 2. Churn by Contract Type
 SELECT 
     Contract,
     COUNT(*) AS total,
@@ -123,7 +122,7 @@ GROUP BY gender;
 SELECT 
     COUNT(*) AS high_value_churners
 FROM customer_churn_analysis
-WHERE Churn = 'Yes' AND TotalCharges > 3000;
+WHERE Churn = 'Yes' AND TotalCharges > 3000;```
 
 ## 📌 Key Insights
 - **Churn Rate:** 26.6% of total customers had churned.
