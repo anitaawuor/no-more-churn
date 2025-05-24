@@ -178,7 +178,7 @@ WHERE Churn = 'Yes' AND TotalCharges > 3000;
 - Use proactive outreach and concierge-style support.
 
 ### 7. Missing Support Services Were Linked to Higher Churn
-**Why it mattered:** Customers lacking Online Backup, Tech Support, or Device Protection churned at noticeably higher rates.
+**Why it mattered:** Customers lacking tech support, online backup, or device protection churned at noticeably higher rates.
 
 **Recommended Actions:**
 - Bundle essential support services into plans.
