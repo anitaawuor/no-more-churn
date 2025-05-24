@@ -136,18 +136,18 @@ WHERE Churn = 'Yes' AND TotalCharges > 3000;
 - **Gender:** Gender had little to no impact on churn, as females churned at a rate of 26.96% and males at 26.20%, a statistically negligible difference of less than 1%.
 - **High-value churners:** A total of 350 high-value customers who had paid over $3,000 each in total charges churned — a significant revenue loss, as these long-term or premium users still chose to end their service.
 
-## 📌 Key Business Implications from Churn Analysis
+## ✅ Key Business Implications from Churn Analysis
 ### 1. Overall Churn Rate — 26.6%
-**Implication:**
+**Implication:** 
 A churn rate this high reflects a critical retention problem. Losing over a quarter of customers impacts recurring revenue, raises acquisition costs, and may point to service or support dissatisfaction.
 
 ### 2. Contract Type — Monthly Plans Churned Most (40%+)
-**Implication:**
+**Implication:** 
 Month-to-month customers are more likely to leave due to a lack of commitment.
 
-**Actionable strategies:**
-Incentivize longer-term contracts (6–12 months)
-Offer loyalty perks or renewal discounts
+**Actionable strategies:** 
+- Incentivize longer-term contracts (6–12 months)
+- Offer loyalty perks or renewal discounts
 
  ### 3. Support Services — Missing Support Linked to Higher Churn
 **Implication:**
@@ -178,7 +178,7 @@ Fiber users may expect premium quality but churn if dissatisfied.
 Audit service quality, support responsiveness, and gather feedback post-installation.
 
 ### 7. Payment Method — Electronic Check Users Churned Most (45.3%)
-** Implication:**
+**Implication:**
 This group may be higher risk due to demographics or payment issues.
 
 **Recommendation:**
