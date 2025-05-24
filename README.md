@@ -136,9 +136,9 @@ WHERE Churn = 'Yes' AND TotalCharges > 3000;
 - **Gender:** Gender had little to no impact on churn, as females churned at a rate of 26.96% and males at 26.20%, a statistically negligible difference of less than 1%.
 - **High-value churners:** A total of 350 high-value customers who had paid over $3,000 each in total charges churned — a significant revenue loss, as these long-term or premium users still chose to end their service.
 
-## ✅ Key Business Implications from Churn Analysis
+## ✅ Targeted Churn Drivers: Identifying Who Leaves, Why, and What It Costs
 ### 1. Overall Churn Rate — 26.6%
-**Implication:** 
+**Why it matters:** 
 A churn rate this high reflects a critical retention problem. Losing over a quarter of customers impacts recurring revenue, raises acquisition costs, and may point to service or support dissatisfaction.
 
 ### 2. Contract Type — Monthly contracts showed a churn rate above 40%
@@ -177,12 +177,23 @@ Fiber users may expect premium quality but churn if dissatisfied.
 **Recommendation:**
 Audit service quality, support responsiveness, and gather feedback post-installation.
 
-### 7. Payment Method — Electronic Check Users Churned Most (45.3%)
-**Implication:**
-This group may be higher risk due to demographics or payment issues.
+### 7. Electronic Check Customers Churn at 45.3%
+**Why it matters:**
+Electronic check users are the highest-risk segment, with nearly half of them leaving. This may be due to demographics or payment issues.
 
-**Recommendation:**
-Promote auto-pay with cards or bank transfer; offer switching incentives.
+**Action:**
+Offer these customers incentives to switch to auto-pay with cards or bank transfer to improve retention.
+
+**Visual:**
+- Bar Chart → PaymentMethod on axis, Churn Rate by Payment Method on values
+- DAX:
+```dax
+Churn Rate by Payment Method = 
+DIVIDE(
+    CALCULATE(COUNTROWS('Telco'), 'Telco'[Churn] = "Yes"),
+    COUNTROWS('Telco')
+)
+```
 
 ### 8. Gender — No Significant Impact
 **Implication:**
