@@ -146,7 +146,7 @@ WHERE Churn = 'Yes' AND TotalCharges > 3000;
 **Why it mattered:** Month-to-month contracts provided flexibility, making it easier for customers to leave at any time.
 
 **Recommended Actions:**
-- Promote 6–12 month contracts through discounts or bundled offers.
+- Promote 6-12 month contracts through discounts or bundled offers.
 - Target this group with loyalty campaigns or exclusive perks.
 
 ### 3. Senior Citizens Churned at Nearly Double the Rate (41.7%)
