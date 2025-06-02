@@ -136,7 +136,7 @@ WHERE Churn = 'Yes' AND TotalCharges > 3000;
 - **Gender:** Gender had little to no impact on churn, as females churned at a rate of 26.96% and males at 26.20%, a statistically negligible difference of less than 1%.
 - **High-value churners:** A total of 350 high-value customers who had paid over $3,000 each in total charges churned — a significant revenue loss, as these long-term or premium users still chose to end their service.
 
-## ✅ Targeted Churn Drivers: Identified Who Left, Why, and What It Cost
+## ✅ Targeted Churn Drivers
 ### 1. Electronic Check Customers Churned at 45.3%
 **Why it mattered:** Electronic check users were the highest-risk segment, with nearly half of them leaving, likely due to demographic or payment-related challenges.
 
