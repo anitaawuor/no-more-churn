@@ -34,7 +34,7 @@ SELECT
     ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
 FROM customer_churn_analysis;
 
--- 2. Churn by Contract Type
+-- 2. Churn Rate by Contract Type
 SELECT 
     Contract,
     COUNT(*) AS total,
@@ -68,7 +68,7 @@ SELECT
 FROM customer_churn_analysis
 GROUP BY DeviceProtection;
 
--- 4. Churn by Senior Citizen --
+-- 4. Churn Rate by Senior Citizen --
 SELECT 
     SeniorCitizen,
     COUNT(*) AS total,
@@ -77,7 +77,7 @@ SELECT
 FROM customer_churn_analysis
 GROUP BY SeniorCitizen;
 
--- 5. Churn by Tenure Group --
+-- 5. Churn Rate by Tenure Group --
 SELECT 
     CASE 
         WHEN tenure BETWEEN 0 AND 12 THEN '0-12 months'
@@ -100,7 +100,7 @@ SELECT
 FROM customer_churn_analysis
 GROUP BY InternetService;
 
--- 7. Churn by Payment Method --
+-- 7. Churn Rate by Payment Method --
 SELECT 
     PaymentMethod,
     COUNT(*) AS total,
