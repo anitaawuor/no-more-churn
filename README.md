@@ -53,6 +53,14 @@ FROM customer_churn_analysis
 GROUP BY TechSupport;
 
 SELECT 
+    OnlineSecurity,
+    COUNT(*) AS total,
+    SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS churn_rate_percent
+FROM customer_churn_analysis
+GROUP BY OnlineSecurity;
+
+SELECT 
     OnlineBackup,
     COUNT(*) AS total,
     SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
@@ -128,18 +136,18 @@ WHERE Churn = 'Yes' AND TotalCharges > 3000;
 ```
 
 ## 📌 Key Insights
-- **Churn Rate:** 26.6% of total customers had churned.
+- **Churn Rate:** ~27% of total customers had churned.
 - **Contract Type:** Monthly contracts had the highest churn rate (over 40%).
-- **Support Services:** Customers without tech support, online backup, or device protection had higher churn rates.
-- **Senior Citizens:** Despite being a smaller group (only ~16% of customers), seniors churned at nearly twice the rate of non-seniors (41.7%).
-- **Tenure Impact:** New customers (tenure < 12 months) churned at the highest rate (47.7%).
-- **Internet Service Type:** Fiber optic customers churned the most, with a 41.9% churn rate.
-- **Payment Method:** Electronic check users churned the most, by far, with a 45.3% churn rate.
-- **Gender:** Gender had little to no impact on churn, as females churned at a rate of 26.96% and males at 26.20%, a statistically negligible difference of less than 1%.
+- **Support Services:** Customers without tech support, online security, online backup, or device protection had higher churn rates.
+- **Senior Citizens:** Despite being a smaller group (only 16% of customers), seniors churned at nearly twice the rate of non-seniors (~42%).
+- **Tenure Impact:** New customers (tenure < 12 months) churned at the highest rate (~48%).
+- **Internet Service Type:** Fiber optic customers churned the most, with a churn rate of ~42%.
+- **Payment Method:** Electronic check users churned the most, by far, with a 45% churn rate.
+- **Gender:** Gender had little to no impact on churn, as females churned at a rate of ~27% and males at 26%, a statistically negligible difference of less than 1%.
 - **High-value churners:** A total of 350 high-value customers who had paid over $3,000 each in total charges churned — a significant revenue loss, as these long-term or premium users still chose to end their service.
 
 ## ✅ Targeted Churn Drivers
-### 1. Electronic Check Customers Churned at 45.3%
+### 1. Electronic Check Customers Churned at 45%
 **Why it mattered:** Electronic check users were the highest-risk segment, with nearly half of them leaving, likely due to demographic or payment-related challenges.
 
 **Recommended Action:** Offer incentives to switch to auto-pay via credit card or bank transfer.
@@ -151,21 +159,21 @@ WHERE Churn = 'Yes' AND TotalCharges > 3000;
 - Promote 6-12 month contracts through discounts or bundled offers.
 - Target this group with loyalty campaigns or exclusive perks.
 
-### 3. Senior Citizens Churned at Nearly Double the Rate (41.7%)
+### 3. Senior Citizens Churned at Nearly Double the Rate (~42%)
 **Why it mattered:** Though seniors made up only 16% of the base, they churned at twice the rate of non-seniors, representing a significant hidden loss.
 
 **Recommended Actions:**
 - Introduce simplified, senior-focused plans.
 - Offer personalized support, including live agents or callbacks.
   
-### 4. New Customers (Tenure < 12 Months) Churned at 47.7%
+### 4. New Customers (Tenure < 12 Months) Churned at ~48%
 **Why it mattered:** Nearly half of new users left within their first year, suggesting poor onboarding or unmet expectations.
 
 **Recommended Actions:**
 - Strengthen the onboarding experience.
 - Use welcome emails, proactive check-ins, and early support interventions.
   
-### 5. Fiber Optic Users Churned at 41.9%
+### 5. Fiber Optic Users Churned at ~42%
 **Why it mattered:** Fiber, typically viewed as a premium offering, had one of the highest churn rates, potentially due to performance or service delivery issues.
 
 **Recommended Actions:**
