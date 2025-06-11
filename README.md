@@ -68,7 +68,7 @@ SELECT
 FROM customer_churn_analysis
 GROUP BY DeviceProtection;
 
--- 4. Churn Rate by Senior Citizen --
+-- 4. Churn Rate by Citizen --
 SELECT 
     SeniorCitizen,
     COUNT(*) AS total,
@@ -80,10 +80,12 @@ GROUP BY SeniorCitizen;
 -- 5. Churn Rate by Tenure Group --
 SELECT 
     CASE 
-        WHEN tenure BETWEEN 0 AND 12 THEN '0-12 months'
+        WHEN tenure BETWEEN 1 AND 12 THEN '1-12 months'
         WHEN tenure BETWEEN 13 AND 24 THEN '13-24 months'
-        WHEN tenure BETWEEN 25 AND 48 THEN '25-48 months'
-        ELSE '49+ months'
+        WHEN tenure BETWEEN 25 AND 36 THEN '25-36 months'
+        WHEN tenure BETWEEN 37 AND 48 THEN '37-48 months'
+        WHEN tenure BETWEEN 49 AND 60 THEN '49-60 months'
+        ELSE '61+ months'
     END AS tenure_group,
     COUNT(*) AS total,
     SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
