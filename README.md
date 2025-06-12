@@ -7,12 +7,12 @@ This project analyzed customer churn behavior for a fictional telecom company. U
 - **Description:** The dataset includes demographic info, service usage, and account details for ~7,000 telecom customers.
 
 ## 🧰 Tools Used
-- **Google Sheets** – Data cleaning and preprocessing
+- **Excel** – Data cleaning and preprocessing
 - **MySQL** – Data storage and analysis using SQL
 - **Power BI** – Interactive dashboards and visual storytelling
 
 ## 🔄 Project Workflow 
-### 1. Data Cleaning (Google Sheets)
+### 1. Data Cleaning (Excel)
 - Removed rows with empty `TotalCharges` (less than 1% of data).
 - Converted `SeniorCitizen` from binary (`0/1`) to categorical (`No/Yes`) for readability.
 - Standardized column names by trimming extra spaces and ensuring consistent formatting.
